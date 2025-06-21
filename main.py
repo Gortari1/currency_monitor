@@ -13,12 +13,12 @@ tickers = [
 if __name__ == "__main__":
     while True:
         # crypto
-        for coin in ['BTC', 'ETH', 'DOGE']:
+        for coin in ['BTC', 'ETH', 'SOL', 'PAXG']:
             data = crypto_extractor.extract_coin(coin)
             if data:
                 save(data)
             else:
-                print(f"⚠️ Dados não salvos para {coin}")
+                print(f"⚠️ {coin} not saved")
 
         # stock
         for ticker in tickers:
