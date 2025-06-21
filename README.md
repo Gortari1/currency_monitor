@@ -1,4 +1,4 @@
-# Toro v0.1
+# ccy_oracle
 
 ### The goal
 
