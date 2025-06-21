@@ -1,5 +1,14 @@
 from datetime import datetime
+from enum import nonmember
+
 import yfinance as yf
+
+def parse_float(val):
+    try:
+        return float(val)
+    except:
+        return None
+
 
 def get_stock_data_yf(ticker):
     try:
@@ -16,10 +25,10 @@ def get_stock_data_yf(ticker):
             "source": "Yahoo Finance",
             "asset": ticker,
             "currency": "BRL",
-            "value": round(last_quote["Close"], 2),
-            "high": round(last_quote["High"], 2),
-            "low": round(last_quote["Low"], 2),
-            "volume": int(last_quote["Volume"]),
+            "value": parse_float(round(last_quote["Close"])),
+            "high": parse_float(round(last_quote["High"])),
+            "low": parse_float(round(last_quote["Low"])),
+            "volume": parse_float(round(last_quote["Volume"])),
             "timestamp": last_quote.name.isoformat()
         }
 
