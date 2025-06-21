@@ -4,4 +4,4 @@ db = TinyDB('db.json')
 
 def save(data):
     db.insert(data)
-    print(f"✅ Dados salvos: {data}")
+    print(f"✅ data writen at DB: {data}")

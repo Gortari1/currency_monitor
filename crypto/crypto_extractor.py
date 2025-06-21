@@ -5,7 +5,7 @@ def extract_coin(coin='BTC', currency='USD'):
     try:
         url = f"https://api.coinbase.com/v2/prices/{coin}-{currency}/spot"
         response = requests.get(url)
-        response.raise_for_status()  # lança erro se status != 200
+        response.raise_for_status()  # raise error for status != 200
         data = response.json()
         return {
             "source": "Coinbase",

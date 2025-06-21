@@ -2,11 +2,11 @@
 
 ### The goal
 
-To ingest historical data currency data from APIS's to build a rich ML training database
+To ingest historical data currency data from API's to build a rich ML training database
 
 ### How
 
-By creating a data pipeline to colect currency data from several external open source API's to ingest the following:
+By creating a data pipeline to collect currency data from several external open source API's to ingest the following:
 ```
 01. ABEV3
 02. B3SA3
@@ -38,6 +38,6 @@ By creating a data pipeline to colect currency data from several external open s
 ```
 ### Sources
 
-API: AlphaVantage
-https://www.alphavantage.co/documentation/
+coinmarket:
+yahoo finance: 
 
