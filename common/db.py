@@ -1,7 +1,15 @@
-from tinydb import TinyDB
+import os
+import json
+from google.cloud import storage
 
-db = TinyDB('db.json')
+def write_db(bucket_name: str, blob_name: str, content: dict):
+    client = storage.Client()
+    bucket = client.bucket(bucket_name)
+    blob = bucket.blob(blob_name)
 
-def save(data):
-    db.insert(data)
-    print(f"✅ data writen at DB: {data}")
+    blob.upload_from_string(
+        json.dumps(content),
+        content_type="application/json"
+    )
+
+    print(f"✅ Saved to {bucket_name}/{blob_name}")
